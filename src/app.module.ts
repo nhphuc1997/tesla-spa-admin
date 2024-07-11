@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AdminModule } from '@adminjs/nestjs';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import provider from './admin/auth-provider.js';
 import * as AdminJSTypeorm from '@adminjs/typeorm'
 import AdminJS from 'adminjs'
@@ -40,29 +40,33 @@ AdminJS.registerAdapter({
     ConfigModule.forRoot({
       envFilePath: '.env',
     }),
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'password',
-      database: 'tesla',
-      entities: [
-        Banner,
-        Category,
-        OptionColor,
-        OptionInterator,
-        OptionWheel,
-        Order,
-        Product,
-        ProductBasicParam,
-        ProductBasicSize,
-        ProductBasicEngine,
-        ColorGroup,
-        Image,
-        CustomerDemand,
-      ],
-      synchronize: true,
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => ({
+        type: 'mysql',
+        host: config.get<string>('DATABASE_HOST'),
+        port: config.get<number>('DATABASE_PORT') || 3306,
+        username: config.get<string>('DATABASE_USER'),
+        password: config.get<string>('DATABASE_PASSWORD'),
+        database: config.get<string>('DATABASE_NAME'),
+        entities: [
+          Banner,
+          Category,
+          OptionColor,
+          OptionInterator,
+          OptionWheel,
+          Order,
+          Product,
+          ProductBasicParam,
+          ProductBasicSize,
+          ProductBasicEngine,
+          ColorGroup,
+          Image,
+          CustomerDemand,
+        ],
+        synchronize: true,
+      })
     }),
     AdminModule.createAdminAsync({
       useFactory: async () => {
