@@ -73,7 +73,7 @@ AdminJS.registerAdapter({
         return {
           adminJsOptions: {
             componentLoader,
-            rootPath: '/',
+            rootPath: '/admin',
             resources: [
               {
                 resource: Banner,
