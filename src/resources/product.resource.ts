@@ -20,6 +20,9 @@ const productResourceOptions = {
         { label: '7 SEAT', value: 7 },
       ]
     },
+    s3Key: { isDisabled: true },
+    bucket: { isDisabled: true },
+    mime: { isDisabled: true },
   },
 }
 
