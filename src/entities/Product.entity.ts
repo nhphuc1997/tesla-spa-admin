@@ -19,7 +19,10 @@ export class Product extends File {
   name: string
 
   @Column({ nullable: true })
-  shortDesciption: string
+  shortDescription: string
+
+  @Column({ nullable: true })
+  description: string
 
   @Column({ nullable: true })
   textIntro: string
