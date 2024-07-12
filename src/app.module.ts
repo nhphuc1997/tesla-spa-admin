@@ -29,6 +29,7 @@ import wheelResourceOptions from './resources/optionWheel.resource.js';
 import productResourceOptions from './resources/product.resource.js';
 import imageResourceOptions from './resources/image.resource.js';
 import orderResourceOptions from './resources/order.resource.js';
+import { RegistryDriven } from './entities/RegistryDriven.entity.js';
 
 AdminJS.registerAdapter({
   Resource: AdminJSTypeorm.Resource,
@@ -64,6 +65,7 @@ AdminJS.registerAdapter({
           ColorGroup,
           Image,
           CustomerDemand,
+          RegistryDriven,
         ],
         synchronize: true,
       })
@@ -143,11 +145,6 @@ AdminJS.registerAdapter({
                   } as any),
                 ],
               },
-              ProductBasicParam,
-              ProductBasicSize,
-              ProductBasicEngine,
-              ColorGroup,
-              CustomerDemand,
               {
                 resource: Image,
                 options: imageResourceOptions,
@@ -160,6 +157,12 @@ AdminJS.registerAdapter({
                   } as any),
                 ],
               },
+              ProductBasicParam,
+              ProductBasicSize,
+              ProductBasicEngine,
+              ColorGroup,
+              CustomerDemand,
+              RegistryDriven,
             ],
             branding: {
               companyName: 'Super Car Admin',
