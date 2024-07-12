@@ -1,6 +1,7 @@
 const productResourceOptions = {
   properties: {
     shortDesciption: { type: 'textarea' },
+    desciption: { type: 'richtext' },
     textIntro: { type: 'textarea' },
     price: { type: 'currency' },
     name: { type: 'text' },
