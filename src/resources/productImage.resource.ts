@@ -1,4 +1,4 @@
-const imageResourceOptions = {
+const ProductImageOptions = {
   properties: {
     s3Key: { isDisabled: true },
     bucket: { isDisabled: true },
@@ -6,4 +6,4 @@ const imageResourceOptions = {
   },
 }
 
-export default imageResourceOptions;
+export default ProductImageOptions;

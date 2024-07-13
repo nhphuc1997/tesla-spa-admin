@@ -16,9 +16,9 @@ import { awscredentials } from './aws/index.js';
 import banerResourceOptions from './resources/banner.resource.js';
 import CategoryResourceOptions from './resources/category.resource.js';
 import productResourceOptions from './resources/product.resource.js';
-import imageResourceOptions from './resources/image.resource.js';
 import orderResourceOptions from './resources/order.resource.js';
 import { ProductImage } from './entities/ProductImage.entity.js';
+import ProductImageOptions from './resources/productImage.resource.js';
 
 AdminJS.registerAdapter({
   Resource: AdminJSTypeorm.Resource,
@@ -92,8 +92,8 @@ AdminJS.registerAdapter({
                 ],
               },
               {
-                resource: Image,
-                options: imageResourceOptions,
+                resource: ProductImage,
+                options: ProductImageOptions,
                 features: [
                   uploadFeature({
                     componentLoader,
