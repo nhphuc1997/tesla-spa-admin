@@ -1,9 +1,9 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, Relation } from "typeorm";
-import { File } from "./File.entity.js";
 import { Category } from "./Category.entity.js";
+import { Base } from "./Base.entity.js";
 
 @Entity('technical')
-export class Technical extends File {
+export class Technical extends Base {
   @PrimaryGeneratedColumn()
   id: number
 
