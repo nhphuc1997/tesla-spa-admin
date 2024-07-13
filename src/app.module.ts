@@ -29,7 +29,7 @@ import wheelResourceOptions from './resources/optionWheel.resource.js';
 import productResourceOptions from './resources/product.resource.js';
 import imageResourceOptions from './resources/image.resource.js';
 import orderResourceOptions from './resources/order.resource.js';
-import { RegistryDriven } from './entities/RegistryDriven.entity.js';
+import { RegistryDriven } from './entities/BookTestDrive.entity.js';
 
 AdminJS.registerAdapter({
   Resource: AdminJSTypeorm.Resource,
