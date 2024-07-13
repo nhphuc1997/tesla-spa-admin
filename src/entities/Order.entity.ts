@@ -19,10 +19,6 @@ export class Order extends Base {
   @Column()
   phoneNumber: string
 
-  @ManyToOne(() => Product, { eager: true })
-  @JoinColumn()
-  product: Relation<Product>
-
   @ManyToOne(() => Interior, { eager: true })
   @JoinColumn()
   interior: Relation<Interior>
@@ -32,9 +28,6 @@ export class Order extends Base {
 
   @ManyToOne(() => Alloy, { eager: true })
   alloy: Relation<Alloy>
-
-  @Column()
-  productId: Relation<Product>
 
   @Column()
   interiorId: Relation<Interior>

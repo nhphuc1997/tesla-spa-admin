@@ -8,6 +8,9 @@ export class Technical extends File {
   id: number
 
   @Column({ nullable: true })
+  name: string
+
+  @Column({ nullable: true })
   maxOutput: string
 
   @Column({ nullable: true })
