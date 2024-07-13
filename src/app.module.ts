@@ -25,7 +25,7 @@ import { Exterior } from './entities/Exterior.entity.js';
 import { Interior } from './entities/Interior.entity.js';
 import { Material } from './entities/Material.entity.js';
 import { Technical } from './entities/Technical.entity.js';
-import resourceOptionsNoFile from './resources/resourceOptionsNoFile.resource.js';
+import resourceCurrency from './resources/currency.resource.js';
 
 AdminJS.registerAdapter({
   Resource: AdminJSTypeorm.Resource,
@@ -76,7 +76,7 @@ AdminJS.registerAdapter({
               Technical,
               {
                 resource: Exterior,
-                options: resourceOptionsNoFile,
+                options: resourceCurrency,
                 features: [
                   uploadFeature({
                     componentLoader,
@@ -88,7 +88,7 @@ AdminJS.registerAdapter({
               },
               {
                 resource: Interior,
-                options: resourceOptionsNoFile,
+                options: resourceCurrency,
                 features: [
                   uploadFeature({
                     componentLoader,
@@ -100,7 +100,7 @@ AdminJS.registerAdapter({
               },
               {
                 resource: Material,
-                options: resourceOptionsNoFile,
+                options: resourceCurrency,
                 features: [
                   uploadFeature({
                     componentLoader,
@@ -112,7 +112,7 @@ AdminJS.registerAdapter({
               },
               {
                 resource: Alloy,
-                options: resourceOptionsNoFile,
+                options: resourceCurrency,
                 features: [
                   uploadFeature({
                     componentLoader,
