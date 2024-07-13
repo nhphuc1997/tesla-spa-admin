@@ -3,7 +3,6 @@ import { Base } from "./Base.entity.js";
 import { Product } from "./Product.entity.js";
 import { Interior } from "./Interior.entity.js";
 import { Exterior } from "./Exterior.entity.js";
-import { Technical } from "./Technical.entity.js";
 import { Alloy } from "./Alloy.entity.js";
 
 @Entity('order')
@@ -20,18 +19,18 @@ export class Order extends Base {
   @Column()
   phoneNumber: string
 
-  @ManyToOne(() => Product)
+  @ManyToOne(() => Product, { eager: true })
   @JoinColumn()
   product: Relation<Product>
 
-  @ManyToOne(() => Interior)
+  @ManyToOne(() => Interior, { eager: true })
   @JoinColumn()
   interior: Relation<Interior>
 
-  @ManyToOne(() => Exterior)
+  @ManyToOne(() => Exterior, { eager: true })
   exterior: Relation<Exterior>
 
-  @ManyToOne(() => Alloy)
+  @ManyToOne(() => Alloy, { eager: true })
   alloy: Relation<Alloy>
 
   @Column()

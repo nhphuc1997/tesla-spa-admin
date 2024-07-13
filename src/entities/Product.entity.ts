@@ -41,11 +41,11 @@ export class Product extends File {
   @JoinColumn()
   category: Relation<Category>
 
-  @ManyToOne(() => ColorGroup)
+  @ManyToOne(() => ColorGroup, { eager: true })
   @JoinColumn()
   colorGroup: Relation<ColorGroup>
 
-  @ManyToOne(() => Technical)
+  @ManyToOne(() => Technical, { eager: true })
   @JoinColumn()
   technical: Relation<Technical>
 
