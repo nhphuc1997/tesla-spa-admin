@@ -28,16 +28,4 @@ export class Category extends Base {
   @OneToMany(() => Alloy, alloy => alloy, { eager: true })
   @JoinColumn()
   alloy: Relation<Alloy>
-
-  @Column()
-  exteriorId: Relation<Exterior>
-
-  @Column()
-  materialId: Relation<Material>
-
-  @Column()
-  interiorId: Relation<Interior>
-
-  @Column()
-  alloyId: Relation<Alloy>
 }

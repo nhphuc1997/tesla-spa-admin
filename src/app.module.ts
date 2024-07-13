@@ -19,6 +19,12 @@ import productResourceOptions from './resources/product.resource.js';
 import orderResourceOptions from './resources/order.resource.js';
 import { ProductImage } from './entities/ProductImage.entity.js';
 import ProductImageOptions from './resources/productImage.resource.js';
+import { Alloy } from './entities/Alloy.entity.js';
+import { BookTestDrive } from './entities/BookTestDrive.entity.js';
+import { Exterior } from './entities/Exterior.entity.js';
+import { Interior } from './entities/Interior.entity.js';
+import { Material } from './entities/Material.entity.js';
+import { Technical } from './entities/Technical.entity.js';
 
 AdminJS.registerAdapter({
   Resource: AdminJSTypeorm.Resource,
@@ -47,6 +53,12 @@ AdminJS.registerAdapter({
           Product,
           ColorGroup,
           ProductImage,
+          Alloy,
+          BookTestDrive,
+          Exterior,
+          Interior,
+          Material,
+          Technical
         ],
         synchronize: true,
       })
