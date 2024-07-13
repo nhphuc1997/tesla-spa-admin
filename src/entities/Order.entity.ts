@@ -1,9 +1,10 @@
-import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Relation } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, Relation } from "typeorm";
 import { Base } from "./Base.entity.js";
 import { Product } from "./Product.entity.js";
-import { OptionColor } from "./Technical.entity.js";
-import { OptionWheel } from "./OptionWheel.entity.js";
-import { OptionInterator } from "./OptionInterator.entity.js";
+import { Interior } from "./Interior.entity.js";
+import { Exterior } from "./Exterior.entity.js";
+import { Technical } from "./Technical.entity.js";
+import { Alloy } from "./Alloy.entity.js";
 
 @Entity('order')
 export class Order extends Base {
@@ -23,6 +24,25 @@ export class Order extends Base {
   @JoinColumn()
   product: Relation<Product>
 
+  @ManyToOne(() => Interior)
+  @JoinColumn()
+  interior: Relation<Interior>
+
+  @ManyToOne(() => Exterior)
+  exterior: Relation<Exterior>
+
+  @ManyToOne(() => Alloy)
+  alloy: Relation<Alloy>
+
   @Column()
   productId: Relation<Product>
+
+  @Column()
+  interiorId: Relation<Interior>
+
+  @Column()
+  exteriorId: Relation<Exterior>
+
+  @Column()
+  alloyId: Relation<Alloy>
 }

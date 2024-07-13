@@ -17,7 +17,7 @@ import { ProductBasicSize } from './entities/ProductBasicSize.entity.js';
 import { ProductBasicEngine } from './entities/ProductBasicEngine.entity.js';
 import { ColorGroup } from './entities/ColorGroup.entity.js';
 import { CustomerDemand } from './entities/CustomerDemand.entity.js';
-import { Image } from './entities/Image.entity.js';
+import { Image } from './entities/ProductImage.entity.js';
 import componentLoader from './admin/component-loader.js';
 import uploadFeature from '@adminjs/upload';
 import { awscredentials } from './aws/index.js';

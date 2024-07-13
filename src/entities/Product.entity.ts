@@ -4,7 +4,7 @@ import {
 } from "typeorm";
 import { Category } from "./Category.entity.js";
 import { ColorGroup } from "./ColorGroup.entity.js";
-import { Image } from "./Image.entity.js";
+import { Image } from "./ProductImage.entity.js";
 import { File } from "./File.entity.js";
 
 @Entity('product')
@@ -49,7 +49,7 @@ export class Product extends File {
 
   @Column()
   colorGroupId: Relation<ColorGroup>
-  
+
   @OneToMany(() => Image, (image) => image.product)
   @JoinColumn()
   images: Relation<Image[]>
