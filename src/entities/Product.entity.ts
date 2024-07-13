@@ -4,8 +4,9 @@ import {
 } from "typeorm";
 import { Category } from "./Category.entity.js";
 import { ColorGroup } from "./ColorGroup.entity.js";
-import { Image } from "./ProductImage.entity.js";
 import { File } from "./File.entity.js";
+import { Technical } from "./Technical.entity.js";
+import { ProductImage } from "./ProductImage.entity.js";
 
 @Entity('product')
 export class Product extends File {
@@ -40,17 +41,24 @@ export class Product extends File {
   @JoinColumn()
   category: Relation<Category>
 
-  @Column()
-  categoryId: Relation<Category>
-
   @ManyToOne(() => ColorGroup)
   @JoinColumn()
   colorGroup: Relation<ColorGroup>
 
+  @ManyToOne(() => Technical)
+  @JoinColumn()
+  technical: Relation<Technical>
+
+  @OneToMany(() => ProductImage, productImage => productImage)
+  @JoinColumn()
+  images: Relation<ProductImage[]>
+
+  @Column()
+  categoryId: Relation<Category>
+
   @Column()
   colorGroupId: Relation<ColorGroup>
 
-  @OneToMany(() => Image, (image) => image.product)
-  @JoinColumn()
-  images: Relation<Image[]>
+  @Column()
+  technicalId: Relation<Technical>
 }
