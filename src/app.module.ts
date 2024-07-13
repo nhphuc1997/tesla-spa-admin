@@ -25,6 +25,7 @@ import { Exterior } from './entities/Exterior.entity.js';
 import { Interior } from './entities/Interior.entity.js';
 import { Material } from './entities/Material.entity.js';
 import { Technical } from './entities/Technical.entity.js';
+import resourceOptionsNoFile from './resources/resourceOptionsNoFile.resource.js';
 
 AdminJS.registerAdapter({
   Resource: AdminJSTypeorm.Resource,
@@ -75,6 +76,7 @@ AdminJS.registerAdapter({
               Technical,
               {
                 resource: Exterior,
+                options: resourceOptionsNoFile,
                 features: [
                   uploadFeature({
                     componentLoader,
@@ -86,6 +88,7 @@ AdminJS.registerAdapter({
               },
               {
                 resource: Interior,
+                options: resourceOptionsNoFile,
                 features: [
                   uploadFeature({
                     componentLoader,
@@ -97,6 +100,7 @@ AdminJS.registerAdapter({
               },
               {
                 resource: Material,
+                options: resourceOptionsNoFile,
                 features: [
                   uploadFeature({
                     componentLoader,
@@ -108,6 +112,7 @@ AdminJS.registerAdapter({
               },
               {
                 resource: Alloy,
+                options: resourceOptionsNoFile,
                 features: [
                   uploadFeature({
                     componentLoader,
