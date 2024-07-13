@@ -7,29 +7,18 @@ import AdminJS from 'adminjs'
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Banner } from './entities/Banner.entity.js';
 import { Category } from './entities/Category.entity.js';
-import { OptionColor } from './entities/Technical.entity.js';
-import { OptionInterator } from './entities/OptionInterator.entity.js';
-import { OptionWheel } from './entities/OptionWheel.entity.js';
 import { Order } from './entities/Order.entity.js';
 import { Product } from './entities/Product.entity.js';
-import { ProductBasicParam } from './entities/ProductBasicParam.entity.js';
-import { ProductBasicSize } from './entities/ProductBasicSize.entity.js';
-import { ProductBasicEngine } from './entities/ProductBasicEngine.entity.js';
 import { ColorGroup } from './entities/ColorGroup.entity.js';
-import { CustomerDemand } from './entities/CustomerDemand.entity.js';
-import { Image } from './entities/ProductImage.entity.js';
 import componentLoader from './admin/component-loader.js';
 import uploadFeature from '@adminjs/upload';
 import { awscredentials } from './aws/index.js';
 import banerResourceOptions from './resources/banner.resource.js';
 import CategoryResourceOptions from './resources/category.resource.js';
-import ColorResourceOptions from './resources/optionColor.resource.js';
-import InteratorResourceOptions from './resources/optionInterator.resource.js';
-import wheelResourceOptions from './resources/optionWheel.resource.js';
 import productResourceOptions from './resources/product.resource.js';
 import imageResourceOptions from './resources/image.resource.js';
 import orderResourceOptions from './resources/order.resource.js';
-import { RegistryDriven } from './entities/BookTestDrive.entity.js';
+import { ProductImage } from './entities/ProductImage.entity.js';
 
 AdminJS.registerAdapter({
   Resource: AdminJSTypeorm.Resource,
@@ -54,18 +43,10 @@ AdminJS.registerAdapter({
         entities: [
           Banner,
           Category,
-          OptionColor,
-          OptionInterator,
-          OptionWheel,
           Order,
           Product,
-          ProductBasicParam,
-          ProductBasicSize,
-          ProductBasicEngine,
           ColorGroup,
-          Image,
-          CustomerDemand,
-          RegistryDriven,
+          ProductImage,
         ],
         synchronize: true,
       })
@@ -77,6 +58,7 @@ AdminJS.registerAdapter({
             componentLoader,
             rootPath: '/admin',
             resources: [
+              ColorGroup,
               {
                 resource: Banner,
                 options: banerResourceOptions,
@@ -92,42 +74,6 @@ AdminJS.registerAdapter({
               {
                 resource: Category,
                 options: CategoryResourceOptions,
-              },
-              {
-                resource: OptionColor,
-                options: ColorResourceOptions,
-                features: [
-                  uploadFeature({
-                    componentLoader,
-                    provider: { aws: awscredentials },
-                    validation: { mimeTypes: [] },
-                    properties: { file: 'file', key: 's3Key', bucket: 'bucket', mimeType: 'mime' },
-                  } as any),
-                ],
-              },
-              {
-                resource: OptionInterator,
-                options: InteratorResourceOptions,
-                features: [
-                  uploadFeature({
-                    componentLoader,
-                    provider: { aws: awscredentials },
-                    validation: { mimeTypes: [] },
-                    properties: { file: 'file', key: 's3Key', bucket: 'bucket', mimeType: 'mime' },
-                  } as any),
-                ],
-              },
-              {
-                resource: OptionWheel,
-                options: wheelResourceOptions,
-                features: [
-                  uploadFeature({
-                    componentLoader,
-                    provider: { aws: awscredentials },
-                    validation: { mimeTypes: [] },
-                    properties: { file: 'file', key: 's3Key', bucket: 'bucket', mimeType: 'mime' },
-                  } as any),
-                ],
               },
               {
                 resource: Order,
@@ -157,12 +103,6 @@ AdminJS.registerAdapter({
                   } as any),
                 ],
               },
-              ProductBasicParam,
-              ProductBasicSize,
-              ProductBasicEngine,
-              ColorGroup,
-              CustomerDemand,
-              RegistryDriven,
             ],
             branding: {
               companyName: 'Super Car Admin',
