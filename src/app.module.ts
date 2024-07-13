@@ -7,7 +7,7 @@ import AdminJS from 'adminjs'
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Banner } from './entities/Banner.entity.js';
 import { Category } from './entities/Category.entity.js';
-import { OptionColor } from './entities/OptionColor.entity.js';
+import { OptionColor } from './entities/Technical.entity.js';
 import { OptionInterator } from './entities/OptionInterator.entity.js';
 import { OptionWheel } from './entities/OptionWheel.entity.js';
 import { Order } from './entities/Order.entity.js';

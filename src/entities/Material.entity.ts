@@ -1,25 +1,25 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, Relation } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, Relation } from "typeorm";
 import { File } from "./File.entity.js";
 import { Category } from "./Category.entity.js";
 
-@Entity('option_color')
+@Entity('material')
 export class OptionColor extends File {
   @PrimaryGeneratedColumn()
   id: number
 
   @Column({ nullable: true })
+  name: string
+
+  @Column({ nullable: true })
   description: string
 
   @Column({ nullable: true, default: 0 })
-  price: number
-
-  @Column({ nullable: false })
-  name: string
-
-  @ManyToOne(() => Category, (category) => category.optionColor)
-  @JoinColumn()
-  category: Relation<Category>
+  price: string
 
   @Column()
   categoryId: Relation<Category>
+
+  @ManyToOne(() => Category,)
+  @JoinColumn()
+  category: Relation<Category>
 }
