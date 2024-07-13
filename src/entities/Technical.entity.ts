@@ -3,7 +3,7 @@ import { File } from "./File.entity.js";
 import { Category } from "./Category.entity.js";
 
 @Entity('technical')
-export class OptionColor extends File {
+export class Technical extends File {
   @PrimaryGeneratedColumn()
   id: number
 
