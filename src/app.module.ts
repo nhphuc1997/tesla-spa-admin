@@ -160,7 +160,6 @@ AdminJS.registerAdapter({
                 features: [
                   uploadFeature({
                     componentLoader,
-                    multiple: true,
                     provider: { aws: awscredentials },
                     validation: { mimeTypes: [] },
                     properties: { file: 'file', key: 's3Key', bucket: 'bucket', mimeType: 'mime' },
