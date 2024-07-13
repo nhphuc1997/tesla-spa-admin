@@ -6,7 +6,6 @@ const productResourceOptions = {
     price: { type: 'currency' },
     name: { type: 'text' },
     color: { type: 'text' },
-    category: { reference: 'Category' },
     kind: {
       availableValues: [
         { label: 'NEW', value: 'NEW' },
@@ -20,9 +19,31 @@ const productResourceOptions = {
         { label: '7 SEAT', value: 7 },
       ]
     },
-    s3Key: { isDisabled: true },
-    bucket: { isDisabled: true },
-    mime: { isDisabled: true },
+    s3Key: {
+      isDisabled: true,
+      isVisible: {
+        edit: false,
+        show: false,
+        list: false,
+        filter: false,
+      }
+    },
+    bucket: {
+      isDisabled: true, isVisible: {
+        edit: false,
+        show: false,
+        list: false,
+        filter: false,
+      }
+    },
+    mime: {
+      isDisabled: true, isVisible: {
+        edit: false,
+        show: false,
+        list: false,
+        filter: false,
+      }
+    },
   },
 }
 

@@ -14,7 +14,7 @@ export class Interior extends File {
   description: string
 
   @Column({ nullable: true, default: 0 })
-  price: string
+  price: number
 
   @Column()
   categoryId: Relation<Category>
