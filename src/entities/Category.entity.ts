@@ -20,11 +20,23 @@ export class Category extends Base {
   @Column()
   technicalId: Relation<Technical>
 
+  @OneToMany(() => Material, material => material, { eager: true })
+  @JoinColumn()
+  material: Relation<Material>
+
   @Column()
   materialId: Relation<Material>
 
+  @OneToMany(() => Exterior, exterior => exterior, { eager: true })
+  @JoinColumn()
+  exterior: Relation<Exterior>
+
   @Column()
   exteriorId: Relation<Exterior>
+
+  @OneToMany(() => Interior, interior => interior, { eager: true })
+  @JoinColumn()
+  interior: Relation<Interior>
 
   @Column()
   interiorId: Relation<Interior>

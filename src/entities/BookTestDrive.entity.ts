@@ -11,10 +11,7 @@ export class BookTestDrive extends Base {
   userId: string
 
   @Column({ nullable: true })
-  phoneNumberFromEmail: string
-
-  @Column({ nullable: true })
-  phoneNumberFromForm: string
+  contactNumber: string
 
   @Column({ nullable: true })
   email: string
