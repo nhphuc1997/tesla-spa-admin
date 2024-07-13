@@ -37,15 +37,15 @@ export class Product extends File {
   @Column({ nullable: true })
   manufactureYear: number
 
-  @ManyToOne(() => Category, { eager: true })
+  @ManyToOne(() => Category)
   @JoinColumn()
   category: Relation<Category>
 
-  @ManyToOne(() => ColorGroup, { eager: true })
+  @ManyToOne(() => ColorGroup)
   @JoinColumn()
   colorGroup: Relation<ColorGroup>
 
-  @ManyToOne(() => Technical, { eager: true })
+  @ManyToOne(() => Technical)
   @JoinColumn()
   technical: Relation<Technical>
 

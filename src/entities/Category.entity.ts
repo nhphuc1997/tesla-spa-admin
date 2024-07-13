@@ -13,19 +13,19 @@ export class Category extends Base {
   @Column()
   name: string
 
-  @OneToMany(() => Material, material => material, { eager: true })
+  @OneToMany(() => Material, material => material)
   @JoinColumn()
   material: Relation<Material>
 
-  @OneToMany(() => Exterior, exterior => exterior, { eager: true })
+  @OneToMany(() => Exterior, exterior => exterior)
   @JoinColumn()
   exterior: Relation<Exterior>
 
-  @OneToMany(() => Interior, interior => interior, { eager: true })
+  @OneToMany(() => Interior, interior => interior)
   @JoinColumn()
   interior: Relation<Interior>
 
-  @OneToMany(() => Alloy, alloy => alloy, { eager: true })
+  @OneToMany(() => Alloy, alloy => alloy)
   @JoinColumn()
   alloy: Relation<Alloy>
 }

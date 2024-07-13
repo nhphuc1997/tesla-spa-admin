@@ -71,6 +71,52 @@ AdminJS.registerAdapter({
             rootPath: '/admin',
             resources: [
               ColorGroup,
+              BookTestDrive,
+              Technical,
+              {
+                resource: Exterior,
+                features: [
+                  uploadFeature({
+                    componentLoader,
+                    provider: { aws: awscredentials },
+                    validation: { mimeTypes: [] },
+                    properties: { file: 'file', key: 's3Key', bucket: 'bucket', mimeType: 'mime' },
+                  } as any),
+                ],
+              },
+              {
+                resource: Interior,
+                features: [
+                  uploadFeature({
+                    componentLoader,
+                    provider: { aws: awscredentials },
+                    validation: { mimeTypes: [] },
+                    properties: { file: 'file', key: 's3Key', bucket: 'bucket', mimeType: 'mime' },
+                  } as any),
+                ],
+              },
+              {
+                resource: Material,
+                features: [
+                  uploadFeature({
+                    componentLoader,
+                    provider: { aws: awscredentials },
+                    validation: { mimeTypes: [] },
+                    properties: { file: 'file', key: 's3Key', bucket: 'bucket', mimeType: 'mime' },
+                  } as any),
+                ],
+              },
+              {
+                resource: Alloy,
+                features: [
+                  uploadFeature({
+                    componentLoader,
+                    provider: { aws: awscredentials },
+                    validation: { mimeTypes: [] },
+                    properties: { file: 'file', key: 's3Key', bucket: 'bucket', mimeType: 'mime' },
+                  } as any),
+                ],
+              },
               {
                 resource: Banner,
                 options: banerResourceOptions,
@@ -109,6 +155,7 @@ AdminJS.registerAdapter({
                 features: [
                   uploadFeature({
                     componentLoader,
+                    multiple: true,
                     provider: { aws: awscredentials },
                     validation: { mimeTypes: [] },
                     properties: { file: 'file', key: 's3Key', bucket: 'bucket', mimeType: 'mime' },
