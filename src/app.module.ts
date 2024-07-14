@@ -26,6 +26,7 @@ import { Interior } from './entities/Interior.entity.js';
 import { Material } from './entities/Material.entity.js';
 import { Technical } from './entities/Technical.entity.js';
 import resourceCurrency from './resources/currency.resource.js';
+import BookTestDriveResourceOptions from './resources/bookATestDrive.resource.js';
 
 AdminJS.registerAdapter({
   Resource: AdminJSTypeorm.Resource,
@@ -72,8 +73,11 @@ AdminJS.registerAdapter({
             rootPath: '/admin',
             resources: [
               ColorGroup,
-              BookTestDrive,
               Technical,
+              {
+                resource: BookTestDrive,
+                options: BookTestDriveResourceOptions
+              },
               {
                 resource: Exterior,
                 options: resourceCurrency,

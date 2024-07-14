@@ -1,6 +1,6 @@
-const orderResourceOptions = {
+const BookTestDriveResourceOptions = {
   properties: {
-    orderId: {
+    bookId: {
       isDisabled: true, isVisible: {
         edit: false,
         show: false,
@@ -11,4 +11,4 @@ const orderResourceOptions = {
   },
 }
 
-export default orderResourceOptions;
+export default BookTestDriveResourceOptions;
