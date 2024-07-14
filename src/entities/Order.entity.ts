@@ -17,11 +17,14 @@ export class Order extends Base {
   @Column()
   userId: string
 
-  @Column({nullable: false})
+  @Column({ nullable: false })
   contactNumber: string
 
   @Column({ nullable: false })
   email: string
+
+  @Column({ nullable: false })
+  amount: number
 
   @ManyToOne(() => Interior, { eager: true })
   @JoinColumn()
