@@ -1,11 +1,12 @@
 const orderResourceOptions = {
   properties: {
     orderId: {
-      isDisabled: true, isVisible: {
+      isDisabled: true,
+      isVisible: {
         edit: false,
-        show: false,
-        list: false,
-        filter: false,
+        show: true,
+        list: true,
+        filter: true,
       }
     }
   },
