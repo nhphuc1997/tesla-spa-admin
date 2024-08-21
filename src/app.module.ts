@@ -70,7 +70,9 @@ AdminJS.registerAdapter({
         return {
           adminJsOptions: {
             componentLoader,
-            rootPath: '/admin',
+            rootPath: '/car/admin',
+            loginPath: '/car/admin/login',
+            logoutPath: '/car/admin/exit',
             resources: [
               ColorGroup,
               Technical,
